@@ -12836,7 +12836,7 @@ Game.Launch=function()
 		new Game.Upgrade('Superscience',loc("Subsequent research will be <b>%1 times</b> as fast.",1000)+'<q>YEAH, IT\'S SCIENCE!</q>',7,[9,15]);//debug purposes only
 		Game.last.pool='debug';
 
-		new Game.Upgrade('Terrible soil',loc("Every tick in Garden lasts for 1 day.")+'<q>The farmer was having a bad day because his plants were growing very slowly. It turned out that his soil was simply terrible.</q>',7,[2,21]);//debug purposes only
+		new Game.Upgrade('Terrible soil',loc("Every tick in Garden lasts for <b>1 day</b>.")+'<q>The farmer was having a bad day because his plants were growing very slowly. It turned out that his soil was simply terrible.</q>',7,[2,21]);//debug purposes only
 		Game.last.buyFunction=function(){if (Game.Objects['Farm'].minigameLoaded){Game.Objects['Farm'].minigame.computeStepT();}}
 		Game.last.pool='debug';
 		new Game.Upgrade('Captivating magic',loc("All spells are free.")+'<q>The wizard wanted to use his magic for a spell as usual, but the magic didn\'t disappear, and the spell was cast anyway. Yet today was a special day, one that every wizard knew about, except for him.</q>',7,[29,11]);//debug purposes only

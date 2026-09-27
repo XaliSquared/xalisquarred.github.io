@@ -12865,6 +12865,7 @@ Game.Launch=function()
 		new Game.Upgrade('Unshackled mice',loc("All mouse upgrades gain additional <b>+0.1% CpS</b>")+'<q>Click on the cookie very carefully, or there will be consequences.</q>',50000000000000000,[11,35]);Game.last.pool='prestige';Game.last.parents=['Unshackled kittens'];
 		new Game.Upgrade('Unshackled upgrades',loc("All upgrades are <b>%1% cheaper</b>.",10)+'<q>Maybe it\'s time to stop buying unshackled upgrades?</q>',50000000000000000,[9,35]);Game.last.pool='prestige';Game.last.parents=['Unshackled mice'];
 
+		order=40000;
 		new Game.Upgrade('Very fast spirits',loc("Worship swaps will refill <b>50,000 times</b> faster")+'<q>The spirits won\'t like it, if you move them very quickly between different slots.</q>',7,[23,18]);//debug purposes only
 		Game.last.pool='debug';
 

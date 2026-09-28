@@ -268,7 +268,7 @@ function formatEveryThirdPower(notations)
 				val/=1000;
 				base++;
 			}
-			if (base>=notations.length) {return loc("Infinity");} else {notationValue=notations[base];}
+			if (base>=notations.length) {return loc('Infinity');} else {notationValue=notations[base];}
 		}
 		return (Math.round(val*1000)/1000)+notationValue;
 	};
@@ -4694,6 +4694,7 @@ Game.Launch=function()
 				else if (Game.lumpCurrentType==2) str+=loc("This sugar lump grew to be <b>golden</b>; harvesting it will yield 2 to 7 lumps, your current cookies will be doubled (capped to a gain of 24 hours of your CpS), and you will find 10% more golden cookies for the next 24 hours.");
 				else if (Game.lumpCurrentType==3) str+=loc("This sugar lump was affected by the elders and grew to be <b>meaty</b>; harvesting it will yield between 0 and 2 lumps.");
 				else if (Game.lumpCurrentType==4) str+=loc("This sugar lump is <b>caramelized</b>, its stickiness binding it to unexpected things; harvesting it will yield between 1 and 3 lumps and will refill your sugar lump cooldowns.");
+				else if (Game.lumpCurrentType==5) str+=loc("This sugar lump is <b>diamond</b>, it's very expensive and can give you many, many dollars if you sell it; chances to get this sugar lump are extremely rare, so you got insanely lucky. It will yield 10 to 15 lumps, your current heavenly chips will be doubled (capped to a gain of 1 quintillion heavenly chips), and you will get 20% more heavenly chips per second for the next 24 hours.")
 			}
 			
 			str+='<div class="line"></div>';
@@ -4796,6 +4797,13 @@ Game.Launch=function()
 				Game.lumpRefill=0;//Date.now()-Game.getLumpRefillMax();
 				Game.Notify(loc("Sugar lump cooldowns cleared!"),'',[29,27]);
 			}
+			else if (Game.lumpCurrentType==5)
+			{
+				total*=choose([10,11,12,13,14,15]);
+				Game.gainBuff('diamond blessing',24*60*60,1);
+				Game.Earn(Math.min(Game.heavenlyChips*2,Game.heavenlyChips+=1000000000000000000));
+				Game.Notify(loc("Diamond blessing activated!"),loc("Your heavenly chips have been doubled.<br>+20% heavenly chips per second for the next 24 hours."),[29,19]);
+			}
 			total=Math.floor(total);
 			Game.gainLumps(total);
 			if (Game.lumpCurrentType==1) Game.Win('Sugar sugar');
@@ -4826,12 +4834,13 @@ Game.Launch=function()
 				if (Math.random()<3/1000) types.push(2);//golden
 				if (Math.random()<0.1*Game.elderWrath) types.push(3);//meaty
 				if (Math.random()<1/50) types.push(4);//caramelized
+				if (Math.random()<1/1000) types.push(5);//diamond
 
-				if (Math.random()<(Game.Has('Sugar epidemic')?0.25:0.1)) types.push(1);//bifurcated
-				if (Math.random()<(Game.Has('Sugar epidemic')?0.25:3/1000)) types.push(2);//golden
-				if (Math.random()<(Game.Has('Sugar epidemic')?0.25:0.1*Game.elderWrath)) types.push(3);//meaty
-				if (Math.random()<(Game.Has('Sugar epidemic')?0.25:1/50)) types.push(4);//caramelized
-
+				if (Math.random()<(Game.Has('Sugar epidemic')?0.2:0.1)) types.push(1);//bifurcated
+				if (Math.random()<(Game.Has('Sugar epidemic')?0.2:3/1000)) types.push(2);//golden
+				if (Math.random()<(Game.Has('Sugar epidemic')?0.2:0.1*Game.elderWrath)) types.push(3);//meaty
+				if (Math.random()<(Game.Has('Sugar epidemic')?0.2:1/50)) types.push(4);//caramelized
+				if (Math.random()<(Game.Has('Sugar epidemic')?0.2:1/1000)) types.push(5);//diamond
 			}
 			Game.lumpCurrentType=choose(types);
 			Math.seedrandom();
@@ -4936,6 +4945,11 @@ Game.Launch=function()
 			{
 				if (phase>=4) row=27;
 				if (phase2>=4) row2=27;
+			}
+			else if (type==5)//diamond
+			{
+				if (phase>=4) row=19;
+				if (phase2>=4) row2=19;
 			}
 			var icon=[23+Math.min(phase,5),row];
 			var icon2=[23+phase2,row2];
@@ -14246,6 +14260,10 @@ Game.Launch=function()
 		order=1050;
 		new Game.Achievement('All on deck',loc("Have <b>%1</b>.",loc("%1 cursor",LBeautify(900))),[0,19]);
 		new Game.Achievement('A round of applause',loc("Have <b>%1</b>.",loc("%1 cursor",LBeautify(1000)))+'<q>Boy, are my arms tired!</q>',[0,28]);
+
+		order=30500;
+		new Game.Achievement('Hardcorer',loc("Get to <b>%1</b> baked with <b>no upgrades purchased</b>.",loc("%1 cookie",LBeautify(1e12))),[13,6]);
+		new Game.Achievement('Hardcorest',loc("Get to <b>%1</b> baked with <b>no upgrades purchased</b>.",loc("%1 cookie",LBeautify(1e15))),[14,6]);
 		
 		//end of achievements
 		
@@ -14528,6 +14546,15 @@ Game.Launch=function()
 				icon:[29,16],
 				time:time*Game.fps,
 				//add:true
+			};
+		});
+		new Game.buffType('diamond blessing',function(time,pow)
+		{
+			return {
+				name:'Diamond blessing',
+				desc:loc("You find 20% more heavenly chips per second for the next 1 day."),
+				icon:[29,19],
+				time:time*Game.fps,
 			};
 		});
 		new Game.buffType('haggler luck',function(time,pow)
@@ -16923,6 +16950,8 @@ Game.Launch=function()
 					if (Game.cookieClicks<=15) Game.Win('Neverclick');
 					if (Game.cookieClicks<=0) Game.Win('True Neverclick');
 					if (Game.cookiesEarned>=1000000000 && Game.UpgradesOwned==0) Game.Win('Hardcore');
+					if (Game.cookiesEarned>=1000000000000 && Game.UpgradesOwned==0) Game.Win('Hardcorer');
+					if (Game.cookiesEarned>=1000000000000000 && Game.UpgradesOwned==0) Game.Win('Hardcorest');
 				}
 				
 				for (var i in Game.UnlockAt)

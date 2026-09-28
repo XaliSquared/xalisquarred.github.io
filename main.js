@@ -16503,6 +16503,7 @@ Game.Launch=function()
 			Game.popups=0;
 			Game.Earn(999999999999999999999999999999);
 			Game.MaxSpecials();
+			Game.Win('Curious');
 			Game.nextResearch=0;
 			Game.researchT=-1;
 			Game.upgradesToRebuild=1;

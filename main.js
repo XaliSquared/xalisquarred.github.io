@@ -12871,7 +12871,7 @@ Game.Launch=function()
 		new Game.Upgrade('Redoubled luck',loc("Golden cookies (and all other things that spawn, such as reindeer) have <b>%1% chance of being doubled</b>.",100)+'<q>The luckiest person on the planet!</q>',7,[27,12]);//debug purposes only
 		Game.last.pool='debug';
 
-		new Game.Upgrade('Sugar epidemic',loc("Every sugar lump type has <b>25%</b> chance to grow.")+'<q>Get your golden sugar lump here and now!</q>',7,[29,16]);//debug purposes only
+		new Game.Upgrade('Sugar epidemic',loc("Every sugar lump type has <b>20%</b> chance to grow.")+'<q>Get your golden sugar lump here and now!</q>',7,[29,16]);//debug purposes only
 		Game.last.pool='debug';
 
 		new Game.Upgrade('Unshackled cookies',loc("Cookie production multiplier <b>+%1% permanently</b>.",25)+'<q>Don\'t eat these cookies.</q>',50000000000000000,[10,35]);Game.last.pool='prestige';Game.last.parents=['Unshackled You'];Game.last.power=25;Game.last.pseudoCookie=true;

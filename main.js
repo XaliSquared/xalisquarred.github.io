@@ -4801,7 +4801,7 @@ Game.Launch=function()
 			{
 				total*=choose([10,11,12,13,14,15]);
 				Game.gainBuff('diamond blessing',24*60*60,1);
-				Game.Earn(Math.min(Game.heavenlyChips*2,Game.heavenlyChips+=1000000000000000000));
+				(Math.min(Game.heavenlyChips=Game.heavenlyChips*2, Game.heavenlyChips=Game.heavenlyChips+1000000000000000000))
 				Game.Notify(loc("Diamond blessing activated!"),loc("Your heavenly chips have been doubled.<br>+20% heavenly chips per second for the next 24 hours."),[29,19]);
 			}
 			total=Math.floor(total);
@@ -12871,7 +12871,7 @@ Game.Launch=function()
 		new Game.Upgrade('Redoubled luck',loc("Golden cookies (and all other things that spawn, such as reindeer) have <b>%1% chance of being doubled</b>.",100)+'<q>The luckiest person on the planet!</q>',7,[27,12]);//debug purposes only
 		Game.last.pool='debug';
 
-		new Game.Upgrade('Sugar epidemic',loc("Every sugar lump type has <b>20%</b> chance to grow.")+'<q>Get your golden sugar lump here and now!</q>',7,[29,16]);//debug purposes only
+		new Game.Upgrade('Sugar epidemic',loc("Every sugar lump type has <b>25%</b> chance to grow.")+'<q>Get your golden sugar lump here and now!</q>',7,[29,16]);//debug purposes only
 		Game.last.pool='debug';
 
 		new Game.Upgrade('Unshackled cookies',loc("Cookie production multiplier <b>+%1% permanently</b>.",25)+'<q>Don\'t eat these cookies.</q>',50000000000000000,[10,35]);Game.last.pool='prestige';Game.last.parents=['Unshackled You'];Game.last.power=25;Game.last.pseudoCookie=true;
@@ -14265,6 +14265,8 @@ Game.Launch=function()
 		new Game.Achievement('Hardcorer',loc("Get to <b>%1</b> baked with <b>no upgrades purchased</b>.",loc("%1 cookie",LBeautify(1e12))),[13,6]);
 		new Game.Achievement('Hardcorest',loc("Get to <b>%1</b> baked with <b>no upgrades purchased</b>.",loc("%1 cookie",LBeautify(1e15))),[14,6]);
 		
+		order=1000000;
+		new Game.Achievement('Curious',loc("Use a secret function in console.")+'<q>Buddy, play the game normally, don\'t use any cheats!</q>',[25,29]);Game.last.pool='shadow';
 		//end of achievements
 		
 		

@@ -1,4 +1,4 @@
-﻿var M={};
+var M={};
 M.parent=Game.Objects['Temple'];
 M.parent.minigame=M;
 M.launch=function()
@@ -493,9 +493,9 @@ M.launch=function()
 	M.logic=function()
 	{
 		//run each frame
-		var t=1000*60*60;
-		if (M.swaps==0) t=1000*60*60*16;
-		else if (M.swaps==1) t=1000*60*60*4;
+		var t=1000*60*60; if (Game.Has('Very fast spirits')) t=72;
+		if (M.swaps==0) t=1000*60*60*16; if (Game.Has('Very fast spirits')) t=1152;
+		else if (M.swaps==1) t=1000*60*60*4; if (Game.Has('Very fast spirits')) t=288;
 		var t2=M.swapT+t-Date.now();
 		if (t2<=0 && M.swaps<3) {M.swaps++;M.swapT=Date.now();}
 		M.lastSwapT++;
@@ -516,11 +516,16 @@ M.launch=function()
 			}
 			l('templeGod'+M.dragging.id).style.transform='translate('+(x)+'px,'+(y)+'px)';
 		}
-		var t=1000*60*60;
-		if (M.swaps==0) t=1000*60*60*16;
-		else if (M.swaps==1) t=1000*60*60*4;
+		var t=1000*60*60; if (Game.Has('Very fast spirits')) t=72;
+		if (M.swaps==0) t=1000*60*60*16; if (Game.Has('Very fast spirits')) if (M.swaps==0) t=1152;
+		else if (M.swaps==1) t=1000*60*60*4; if (Game.Has('Very fast spirits')) if (M.swaps==1) t=288;
 		var t2=M.swapT+t-Date.now();
 		if (Game.drawT%5==0) M.swapsL.innerHTML=loc("Worship swaps: %1",'<span class="titleFont" style="color:'+(M.swaps>0?'#fff':'#c00')+';">'+M.swaps+'/'+(3)+'</span>')+((M.swaps<3)?' ('+loc("next in %1",Game.sayTime((t2/1000+1)*Game.fps,-1))+')':'');
+
+		/*if (Game.Has('Very fast spirits')) {if (M.swaps==0) t=1152;
+			else if (M.swaps==1) t=288;
+			else if (M.swaps==2) t=72;
+		}*/
 	}
 	M.init(l('rowSpecial'+M.parent.id));
 

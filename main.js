@@ -1,4 +1,4 @@
-﻿/*
+/*
 All this code is copyright Orteil, 2013-2026.
 	-with some help, advice and fixes by Nicholas Laux, Debugbro, Opti, the folks at Playsaurus, and lots of people on reddit, Discord, and the DashNet forums
 	-also includes a bunch of snippets found on stackoverflow.com and others
@@ -259,7 +259,7 @@ function formatEveryThirdPower(notations)
 	return function (val)
 	{
 		var base=0,notationValue='';
-		if (!isFinite(val)) return 'Infinity';
+		if (!isFinite(val)) return loc('Infinity');
 		if (val>=1000000)
 		{
 			val/=1000;
@@ -268,7 +268,7 @@ function formatEveryThirdPower(notations)
 				val/=1000;
 				base++;
 			}
-			if (base>=notations.length) {return 'Infinity';} else {notationValue=notations[base];}
+			if (base>=notations.length) {return loc("Infinity");} else {notationValue=notations[base];}
 		}
 		return (Math.round(val*1000)/1000)+notationValue;
 	};
@@ -344,7 +344,7 @@ var shortenNumber=function(val)
 
 var SimpleBeautify=function(val)
 {
-	if (!isFinite(val)) return 'Infinity';
+	if (!isFinite(val)) return loc,("Infinity");
 	var str=val.toString();
 	if (str.indexOf('e')!=-1) return str;
 	var str2='';
@@ -5010,7 +5010,7 @@ Game.Launch=function()
 			
 			if (Game.Has('Fortune #104')) add+=Game.cookiesPs*0.01; if (Game.Has('Unshackled mice', Game.Has('Fortune #104'))) (add+=Game.cookiesPs*powerMultiplier);
 			if (Game.Has('Unshackled mice')) add+=Game.cookiesPs*0;
-			if (Game.Has('Infinite production of cookies')) add+=Game.cookiesPs=Game.cookiesPs*(Math.pow(1))
+			if (Game.Has('Unknown shenanigans')) add+=Game.cookiesPs=Game.cookiesPs*(Math.pow(1))
 			var mult=1;
 			
 			
@@ -12842,13 +12842,13 @@ Game.Launch=function()
 		new Game.Upgrade('Captivating magic',loc("All spells are free.")+'<q>The wizard wanted to use his magic for a spell as usual, but the magic didn\'t disappear, and the spell was cast anyway. Yet today was a special day, one that every wizard knew about, except for him.</q>',7,[29,11]);//debug purposes only
 		Game.last.pool='debug';
 
-		new Game.Upgrade('Infinite production of cookies',loc("Cookie production <b>multiplied to Infinity</b>.")+'<q>More cookies! MORE!</q>',7,[22,0]);//debug purposes only
+		new Game.Upgrade('Unknown shenanigans',loc("Cookie production <b>multiplied to Infinity</b>.")+'<q>More cookies! MORE!</q>',7,[22,0]);//debug purposes only
 		Game.last.pool='debug';
 
-		new Game.Upgrade('Get mega lucky',loc("Golden cookie effects last <b>60 times</b> longer.",)+'<q>You\'ve been up for a... month? You are crazy, man.</q>',7,[27,6]);//debug purposes only
+		new Game.Upgrade('Get mega lucky',loc("Golden cookie effects last <b>60 times</b> longer.")+'<q>You\'ve been up for a... month? You are crazy, man.</q>',7,[27,6]);//debug purposes only
 		Game.last.pool='debug';
 
-		new Game.Upgrade('Bright wrinklers',loc("All wrinklers are shiny.",)+'<q>You\'re an incredible pushover.</q>',7,[24,12]);//debug purposes only
+		new Game.Upgrade('Bright wrinklers',loc("All wrinklers are shiny.")+'<q>You\'re an incredible pushover.</q>',7,[24,12]);//debug purposes only
 		Game.last.pool='debug';
 
 		new Game.Upgrade('Chip God',loc("<b>+%1%</b> prestige level effect on CpS.",999800)+'<q>You have great potential.</q>',7,[19,7]);//debug purposes only
@@ -12857,16 +12857,16 @@ Game.Launch=function()
 		new Game.Upgrade('Redoubled luck',loc("Golden cookies (and all other things that spawn, such as reindeer) have <b>%1% chance of being doubled</b>.",100)+'<q>The luckiest person on the planet!</q>',7,[27,12]);//debug purposes only
 		Game.last.pool='debug';
 
-		new Game.Upgrade('Sugar epidemic',loc("Every sugar lump type has <b>25%</b> chance to grow.",)+'<q>Get your golden sugar lump here and now!</q>',7,[29,16]);//debug purposes only
+		new Game.Upgrade('Sugar epidemic',loc("Every sugar lump type has <b>25%</b> chance to grow.")+'<q>Get your golden sugar lump here and now!</q>',7,[29,16]);//debug purposes only
 		Game.last.pool='debug';
 
 		new Game.Upgrade('Unshackled cookies',loc("Cookie production multiplier <b>+%1% permanently</b>.",25)+'<q>Don\'t eat these cookies.</q>',50000000000000000,[10,35]);Game.last.pool='prestige';Game.last.parents=['Unshackled You'];Game.last.power=25;Game.last.pseudoCookie=true;
 		new Game.Upgrade('Unshackled kittens',loc("Kittens are <b>%1%</b> more effective.",5)+'<q>Don\'t touch those kittens, they have very sharp claws.</q>',50000000000000000,[18,35]);Game.last.pool='prestige';Game.last.parents=['Unshackled cookies'];
-		new Game.Upgrade('Unshackled mice',loc("All mouse upgrades gain additional <b>+0.1% CpS</b>")+'<q>Click on the cookie very carefully, or there will be consequences.</q>',50000000000000000,[11,35]);Game.last.pool='prestige';Game.last.parents=['Unshackled kittens'];
+		new Game.Upgrade('Unshackled mice',loc("All mouse upgrades gain additional <b>+0.1% CpS</b>.")+'<q>Click on the cookie very carefully, or there will be consequences.</q>',50000000000000000,[11,35]);Game.last.pool='prestige';Game.last.parents=['Unshackled kittens'];
 		new Game.Upgrade('Unshackled upgrades',loc("All upgrades are <b>%1% cheaper</b>.",10)+'<q>Maybe it\'s time to stop buying unshackled upgrades?</q>',50000000000000000,[9,35]);Game.last.pool='prestige';Game.last.parents=['Unshackled mice'];
 
 		order=40000;
-		new Game.Upgrade('Very fast spirits',loc("Worship swaps will refill <b>50,000 times</b> faster")+'<q>The spirits won\'t like it, if you move them very quickly between different slots.</q>',7,[23,18]);//debug purposes only
+		new Game.Upgrade('Very fast spirits',loc("Worship swaps will refill <b>50,000 times</b> faster.")+'<q>The spirits won\'t like it, if you move them very quickly between different slots.</q>',7,[23,18]);//debug purposes only
 		Game.last.pool='debug';
 
 		//end of upgrades
@@ -16499,7 +16499,7 @@ Game.Launch=function()
 		Game.SetAllUpgrades=function(on)
 		{
 			Game.popups=0;
-			var leftout=['Magic shenanigans','Occult obstruction','Glucose-charged air','Infinite production of cookies'];
+			var leftout=['Magic shenanigans','Occult obstruction','Glucose-charged air','Unknown shenanigans'];
 			for (var i in Game.Upgrades)
 			{
 				if (on && (Game.Upgrades[i].pool=='toggle' || leftout.indexOf(Game.Upgrades[i].name)!=-1)) {}

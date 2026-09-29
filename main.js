@@ -4258,7 +4258,7 @@ Game.Launch=function()
 		Game.HCfactor=3;
 		Game.HowMuchPrestige=function(cookies)//how much prestige [cookies] should land you
 		{
-			return Math.pow(cookies/1000000000000,1/Game.HCfactor); if (Game.hasBuff('diamond blessing')) {return Math.pow(cookies/800000000000,1/Game.HCfactor)}
+			return Math.pow(cookies/1000000000000,1/Game.HCfactor);
 		}
 		Game.HowManyCookiesReset=function(chips)//how many cookies [chips] are worth
 		{
@@ -4800,12 +4800,11 @@ Game.Launch=function()
 			else if (Game.lumpCurrentType==5)
 			{
 				total*=choose([10,11,12,13,14,15]);
-				Game.gainBuff('diamond blessing',24*60*60,1);
 				{
 					if (Game.heavenlyChips<=1000000000000000000) {Game.heavenlyChips=Game.heavenlyChips*2}
 					if (Game.heavenlyChips>=1000000000000000000) {Game.heavenlyChips=Game.heavenlyChips+=1000000000000000000}
 				}
-				Game.Notify(loc("Diamond blessing activated!"),loc("Your heavenly chips have been doubled.<br>+25% heavenly chips per second for the next 24 hours."),[29,19]);
+				Game.Notify(loc("Your heavenly chips have been doubled."),'',[29,19]);
 			}
 			total=Math.floor(total);
 			Game.gainLumps(total);
@@ -14555,15 +14554,6 @@ Game.Launch=function()
 				icon:[29,16],
 				time:time*Game.fps,
 				//add:true
-			};
-		});
-		new Game.buffType('diamond blessing',function(time,pow)
-		{
-			return {
-				name:'Diamond blessing',
-				desc:loc("You find 25% more heavenly chips per second for the next 1 day."),
-				icon:[29,19],
-				time:time*Game.fps,
 			};
 		});
 		new Game.buffType('haggler luck',function(time,pow)

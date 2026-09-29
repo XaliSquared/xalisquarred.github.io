@@ -486,9 +486,12 @@ AddLanguage('RU','russian',{
 	"This sugar lump is mature and will be ripe in <b>%1</b>.<br>You may <b>click it to harvest it now</b>, but there is a <b>50% chance you won't get anything</b>.": "Этот кусочек сахара уже вырос и созреет через <b>%1</b>.<br>Можно <b>щелкнуть кусочек, чтобы собрать его сейчас</b>, но есть вероятность <b>50%, что вы ничего не получите</b>.",
 	"<b>This sugar lump is ripe! Click it to harvest it.</b><br>If you do nothing, it will auto-harvest in <b>%1</b>.": "<b>Этот кусочек сахара созрел! Щелкните по нему, чтобы собрать.</b><br>Если ничего не делать, то через <b>%1</b> он будет собран автоматически.",
 	"This sugar lump grew to be <b>bifurcated</b>; harvesting it has a 50% chance of yielding two lumps.": "Этот кусочек сахара вырос <b>двойным</b>; при сборе существует вероятность 50%, что вы получите два кусочка.",
-	"This sugar lump grew to be <b>golden</b>; harvesting it will yield 2 to 7 lumps, your current cookies will be doubled (capped to a gain of 24 hours of your CpS), and you will find 10% more golden cookies for the next 24 hours.": "Этот кусочек сахара вырос <b>золотым</b>; при сборе вы получите от 2 до 7 кусочков, текущее количество печенья будет удвоено (печ/с вырастет на 24 часа), и вы найдете на 10% больше золотых печенек в течение следующих 24 часов.",
+	"This sugar lump grew to be <b>golden</b>; harvesting it will yield 2 to 7 lumps, your current cookies will be doubled (capped to a gain of 24 hours of your CpS), and you will find 10% more golden cookies for the next 24 hours.": "Этот кусочек сахара вырос <b>золотым</b>; при сборе вы получите от 2 до 7 кусочков, текущее количество печенья будет удвоено (не больше 24 часов печ/с), и вы найдете на 10% больше золотых печенек в течение следующих 24 часов.",
 	"This sugar lump was affected by the elders and grew to be <b>meaty</b>; harvesting it will yield between 0 and 2 lumps.": "Этот кусочек сахара подвергся влиянию старушек и стал <b>мясным</b>; при сборе вы получите от 0 до 2 кусочков.",
 	"This sugar lump is <b>caramelized</b>, its stickiness binding it to unexpected things; harvesting it will yield between 1 and 3 lumps and will refill your sugar lump cooldowns.": "Этот кусочек сахара <b>карамельный</b>, он может прилипать к неожиданным вещам; при сборе вы получите от 1 до 3 кусочков, кроме того будут сброшены кулдауны для сахарков.",
+	"This sugar lump is <b>diamond</b>, it's very expensive and can give you many, many dollars if you sell it; chances to get this sugar lump are extremely low, so you got insanely lucky! It will yield 10 to 15 lumps, your current heavenly chips will be doubled (capped to a gain of 1 quintillion heavenly chips), and you will get 25% more heavenly chips per second for the next 24 hours.": "Этот кусочек сахара <b>алмазный</b>, он очень дорогой, и вы получите очень, очень много долларов, если вы его сможете продать; шансы получить этот кусочек сахара очень низкие, так что вам невероятно повезло! При сборе вы получите от 10 до 15 кусочков, текущее количество небесных крошек будет удвоено (не больше 1 квинтиллиона небесных крошек), и вы найдете на 25% больше небесных крошек/с в течение следующих 24 часов.",
+	"Diamond blessing activated!": "Алмазное благословение активировано!",
+	"Your heavenly chips have been doubled.<br>+25% heavenly chips per second for the next 24 hours.": "Количество небесных крошек удвоено.<br>На 25% больше небесных крошек/с в течение следующих 24 часов.",
 	"You harvested <b>%1</b> while you were away.": "Пока вас не было, вы собрали <b>%1</b>.",
 	"Sugar blessing activated!": "Сахарное благословение активировано!",
 	"Your cookies have been doubled.<br>+10% golden cookies for the next 24 hours.": "Количество печенья удвоено.<br>На 10% больше золотых печенек в течение следующих 24 часов.",
@@ -1504,6 +1507,7 @@ AddLanguage('RU','russian',{
 	"Harvest a <b>golden sugar lump</b>.": "Собрать <b>золотой кусочек сахара</b>.",
 	"Harvest a <b>meaty sugar lump</b>.": "Собрать <b>мясной кусочек сахара</b>.",
 	"Harvest a <b>caramelized sugar lump</b>.": "Собрать <b>карамельный кусочек сахара</b>.",
+	"Harvest a <b>diamond sugar lump</b>.": "Собрать <b>алмазный кусочек сахара</b>.",
 	"Reach level <b>%1</b> %2.": "Достичь уровня <b>%1</b> %2.",
 	"Cast <b>%1</b> spells.": "Использовать заклинания <b>%1</b>.",
 	"Have <b>%1</b> golden cookies simultaneously.": "Получить одновременно <b>%1</b> золотых печенек.",
@@ -3538,5 +3542,7 @@ AddLanguage('RU','russian',{
 	"[Achievement name 643]Hardcorer": "Хардкорнее",
 	"[Achievement name 644]Hardcorest": "Самый хардкорный",
 	"[Achievement name 645]Curious": "Любопытный",
-	"[Achievement quote 645]Buddy, play the game normally, dont use any cheats!": "Дружище, играй в игру по честному, не используй никакие читы!"
+	"[Achievement name 646]Precious and sparkling sugar": "Драгоценный и блестящий сахар",
+	"[Achievement quote 645]Buddy, play the game normally, dont use any cheats!": "Дружище, играй в игру по честному, не используй никакие читы!",
+	"[Achievement quote 646]It sold for $12,500 at auction!": "Его продали на аукционе за 12,500 долларов!"
 });

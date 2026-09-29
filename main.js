@@ -4258,7 +4258,7 @@ Game.Launch=function()
 		Game.HCfactor=3;
 		Game.HowMuchPrestige=function(cookies)//how much prestige [cookies] should land you
 		{
-			return Math.pow(cookies/1000000000000,1/Game.HCfactor);
+			return Math.pow(cookies/1000000000000,1/Game.HCfactor); if (Game.hasBuff('diamond blessing')) {return Math.pow(cookies/800000000000,1/Game.HCfactor)}
 		}
 		Game.HowManyCookiesReset=function(chips)//how many cookies [chips] are worth
 		{
@@ -4694,7 +4694,7 @@ Game.Launch=function()
 				else if (Game.lumpCurrentType==2) str+=loc("This sugar lump grew to be <b>golden</b>; harvesting it will yield 2 to 7 lumps, your current cookies will be doubled (capped to a gain of 24 hours of your CpS), and you will find 10% more golden cookies for the next 24 hours.");
 				else if (Game.lumpCurrentType==3) str+=loc("This sugar lump was affected by the elders and grew to be <b>meaty</b>; harvesting it will yield between 0 and 2 lumps.");
 				else if (Game.lumpCurrentType==4) str+=loc("This sugar lump is <b>caramelized</b>, its stickiness binding it to unexpected things; harvesting it will yield between 1 and 3 lumps and will refill your sugar lump cooldowns.");
-				else if (Game.lumpCurrentType==5) str+=loc("This sugar lump is <b>diamond</b>, it's very expensive and can give you many, many dollars if you sell it; chances to get this sugar lump are extremely rare, so you got insanely lucky. It will yield 10 to 15 lumps, your current heavenly chips will be doubled (capped to a gain of 1 quintillion heavenly chips), and you will get 20% more heavenly chips per second for the next 24 hours.")
+				else if (Game.lumpCurrentType==5) str+=loc("This sugar lump is <b>diamond</b>, it's very expensive and can give you many, many dollars if you sell it; chances to get this sugar lump are extremely low, so you got insanely lucky! It will yield 10 to 15 lumps, your current heavenly chips will be doubled (capped to a gain of 1 quintillion heavenly chips), and you will get 25% more heavenly chips per second for the next 24 hours.")
 			}
 			
 			str+='<div class="line"></div>';
@@ -4801,8 +4801,11 @@ Game.Launch=function()
 			{
 				total*=choose([10,11,12,13,14,15]);
 				Game.gainBuff('diamond blessing',24*60*60,1);
-				(Math.min(Game.heavenlyChips=Game.heavenlyChips*2, Game.heavenlyChips=Game.heavenlyChips+1000000000000000000))
-				Game.Notify(loc("Diamond blessing activated!"),loc("Your heavenly chips have been doubled.<br>+20% heavenly chips per second for the next 24 hours."),[29,19]);
+				{
+					if (Game.heavenlyChips<=1000000000000000000) {Game.heavenlyChips=Game.heavenlyChips*2}
+					if (Game.heavenlyChips>=1000000000000000000) {Game.heavenlyChips=Game.heavenlyChips+=1000000000000000000}
+				}
+				Game.Notify(loc("Diamond blessing activated!"),loc("Your heavenly chips have been doubled.<br>+25% heavenly chips per second for the next 24 hours."),[29,19]);
 			}
 			total=Math.floor(total);
 			Game.gainLumps(total);
@@ -4810,6 +4813,7 @@ Game.Launch=function()
 			else if (Game.lumpCurrentType==2) Game.Win('All-natural cane sugar');
 			else if (Game.lumpCurrentType==3) Game.Win('Sweetmeats');
 			else if (Game.lumpCurrentType==4) Game.Win('Maillard reaction');
+			else if (Game.lumpCurrentType==5) Game.Win('Precious and sparkling sugar');
 			
 			if (!silent)
 			{
@@ -14264,9 +14268,12 @@ Game.Launch=function()
 		order=30500;
 		new Game.Achievement('Hardcorer',loc("Get to <b>%1</b> baked with <b>no upgrades purchased</b>.",loc("%1 cookie",LBeautify(1e12))),[13,6]);
 		new Game.Achievement('Hardcorest',loc("Get to <b>%1</b> baked with <b>no upgrades purchased</b>.",loc("%1 cookie",LBeautify(1e15))),[14,6]);
-		
+
 		order=1000000;
 		new Game.Achievement('Curious',loc("Use a secret function in console.")+'<q>Buddy, play the game normally, don\'t use any cheats!</q>',[25,29]);Game.last.pool='shadow';
+
+		order=21100;
+		new Game.Achievement('Precious and sparkling sugar',loc("Harvest a <b>diamond sugar lump</b>.")+'<q>It sold for $12,500 at auction!</q>',[29,19]);Game.last.pool='shadow';
 		//end of achievements
 		
 		
@@ -14554,7 +14561,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Diamond blessing',
-				desc:loc("You find 20% more heavenly chips per second for the next 1 day."),
+				desc:loc("You find 25% more heavenly chips per second for the next 1 day."),
 				icon:[29,19],
 				time:time*Game.fps,
 			};

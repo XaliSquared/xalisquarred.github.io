@@ -172,10 +172,10 @@ M.launch=function()
 					'<div style="text-align:center;margin-bottom:8px;">'+
 						'<div class="usesIcon shadowFilter templeGem templeGem'+(parseInt(id)+1)+'" style="margin:0px auto;"></div>'+
 						'<div class="templeEffect fancyText winged" style="font-size:16px;display:inline-block;padding:0px;margin:0px auto;">'+loc(M.slotNames[id]+" slot")+'</div><br>'+
-						/*'<div class="icon" style="display:block;margin:0px auto;background-position:'+(-me.icon[0]*48)+'px '+(-me.icon[1]*48)+'px;"></div>'+
-						'<div class="templeEffect fancyText winged" style="font-size:16px;display:inline-block;padding:0px;margin:0px auto;">'+me.name+'</div>'+*/
+						'<div class="icon" style="display:block;margin:0px auto;background-position:'+(-me.icon[0]*48)+'px '+(-me.icon[1]*48)+'px;"></div>'+
+						'<div class="templeEffect fancyText winged" style="font-size:16px;display:inline-block;padding:0px;margin:0px auto;">'+me.name+'</div>'+
 					'</div><div class="line"></div>'+
-					//'<div class="name templeEffect" style="margin-bottom:12px;"><div class="usesIcon shadowFilter templeGem templeGem'+(parseInt(id)+1)+'"></div>'+loc(M.slotNames[id]+" slot")+'</div>'+
+					'<div class="name templeEffect" style="margin-bottom:12px;"><div class="usesIcon shadowFilter templeGem templeGem'+(parseInt(id)+1)+'"></div>'+loc(M.slotNames[id]+" slot")+'</div>'+
 					'<div class="icon" style="float:left;margin-left:-8px;margin-top:-8px;background-position:'+(-me.icon[0]*48)+'px '+(-me.icon[1]*48)+'px;"></div>'+
 					'<div class="name fancyText">'+me.name+'</div>'+
 					'<div class="line"></div><div class="description"><div class="effectsLabel">'+loc("Effects:")+'</div>'+
@@ -358,11 +358,11 @@ M.launch=function()
 		
 		'.templeGem{z-index:100;width:24px;height:24px;}'+
 		'.templeEffect{font-weight:bold;font-size:11px;position:relative;margin:0px -12px;padding:4px;padding-left:28px;}'+
-		//'.description .templeEffect{border-top:1px solid rgba(255,255,255,0.15);background:linear-gradient(to top,rgba(255,255,255,0.1),rgba(255,255,255,0));}'+
+		'.description .templeEffect{border-top:1px solid rgba(255,255,255,0.15);background:linear-gradient(to top,rgba(255,255,255,0.1),rgba(255,255,255,0));}'+
 		'.description .templeEffect{background:rgba(255,255,255,0.1);border-radius:4px;margin:3px;}'+
 		'.effectsLabel {background:rgba(255,255,255,0.1);border-radius:4px 4px 0px 0px;padding:2px 8px;margin:0px 0px -3px 0px;font-weight:bold;display:inline-block;}'+
 		'.templeEffect .templeGem{position:absolute;left:0px;top:0px;}'+
-		//'.templeEffectOn{text-shadow:0px 0px 6px currentColor;color:#fff;}'+
+		'.templeEffectOn{text-shadow:0px 0px 6px currentColor;color:#fff;}'+
 		'.description .templeEffectOn{background:rgba(255,255,255,0.2);box-shadow:0px 0px 0px 1px rgba(255,255,255,0.5);}'+
 		'.templeGod .templeGem{position:absolute;left:18px;bottom:8px;pointer-events:none;}'+
 		'.templeGem1{background-position:-1104px -720px;}'+

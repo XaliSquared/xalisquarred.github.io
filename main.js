@@ -1453,7 +1453,7 @@ Game.Launch=function()
 	(App?'<div class="listing" style="font-weight:bold;font-style:italic;opacity:0.5;">'+loc("Note: links will open in your web browser.")+'</div>':'')+
 	'<div class="listing">'+loc("Cookie Clicker is a javascript game by %1 and %2.",['<a href="//orteil.dashnet.org" target="_blank">Orteil</a>','<a href="//dashnet.org" target="_blank">Opti</a>'])+'</div>'+
 	(App?'<div class="listing">'+loc("Music by %1.",'<a href="https://bsky.app/profile/c418.org" target="_blank">C418</a>')+'</div>':'')+
-	'<div class="listing">We have an <a href="https://discordapp.com/invite/cookie" target="_blank">official Discord</a>, as well as a <a href="http://forum.dashnet.org" target="_blank">forum</a>; '+
+	//'<div class="listing">We have an <a href="https://discordapp.com/invite/cookie" target="_blank">official Discord</a>, as well as a <a href="http://forum.dashnet.org" target="_blank">forum</a>; '+
 	'<div class="listing">'+(EN?
 		'We have an <a href="https://discordapp.com/invite/cookie" target="_blank">official Discord</a>; if you\'re looking for help, you may also want to visit the <a href="https://www.reddit.com/r/CookieClicker" target="_blank">subreddit</a> or the <a href="https://cookieclicker.wiki.gg/wiki/Cookie_Clicker_Wiki" target="_blank">wiki</a>.<br>News and teasers are usually posted on Orteil\'s <a href="https://orteil42.tumblr.com/" target="_blank">tumblr</a> and <a href="https://orteil42.bsky.social" target="_blank">bluesky</a>.'
 		:
@@ -1607,7 +1607,7 @@ Game.Launch=function()
 	'<div class="listing">&bull; game has been renamed to "Cookie Clicker" to avoid confusion</div>'+
 	'<div class="listing">&bull; can now click the big cookie to generate cookies for free</div>'+
 	'<div class="listing">&bull; removed fall damage</div>'+
-	'<div class="listing">&bull; fixed various typos : player\'s name is now correctly spelled as "[bakeryName]"</div>'+
+	//'<div class="listing">&bull; fixed various typos : player\'s name is now correctly spelled as "[bakeryName]"</div>'+
 	'<div class="listing">&bull; removed all references to computer-animated movie <i style="font-style:italic;">Hoodwinked!</i> (2005)</div>'+
 	'<div class="listing">&bull; went back in time and invented cookies and computer mice, ensuring Cookie Clicker would one day come to exist</div>'+
 	'<div class="listing">&bull; game now fully compliant with Geneva Conventions</div>'+
@@ -1796,7 +1796,7 @@ Game.Launch=function()
 		'-golden switch now gives +50% CpS, and residual luck is +10% CpS per golden cookie upgrade (up from +25% and +1%, respectively)<br>'+
 		'-lucky cookies and cookie chain payouts have been modified a bit, possibly for the better, who knows!<br>'+
 		'-wrinklers had previously been reduced to a maximum of 8 (10 with a heavenly upgrade), but are now back to 10 (12 with the upgrade)<br>'+
-		'-all animations are now handled by requestAnimationFrame(), which should hopefully help make the game less resource-intensive<br>'+
+		/*'-all animations are now handled by requestAnimationFrame(), which should hopefully help make the game less resource-intensive<br>'+*/
 		'-an ascension now only counts for achievement purposes if you earned at least 1 prestige level from it<br>'+
 		'-the emblematic Cookie Clicker font (Kavoon) was bugged in Firefox, and has been replaced with a new font (Merriweather)<br>'+
 		'-the mysterious wrinkly creature is now even rarer, but has a shadow achievement tied to it<br>'+
@@ -2073,7 +2073,7 @@ Game.Launch=function()
 	
 	Game.Load=function(callback)
 	{
-		l('offGameMessage').innerHTML='<div style="padding:64px 128px;"><div class="title">Loading...</div></div>';
+		//l('offGameMessage').innerHTML='<div style="padding:64px 128px;"><div class="title">Loading...</div></div>';
 		Game.Loader=new Loader();
 		Game.Loader.domain=Game.resPath+'img/';
 		if (typeof PRELOAD!=='undefined') Game.Loader.loaded=PRELOAD(Game.Init);
@@ -2499,10 +2499,10 @@ Game.Launch=function()
 				Y=Game.mouseY-32;
 				if (Game.onCrate) Y=Game.onCrate.getBounds().top-42;
 				Y=Math.max(0,Math.min(Game.windowH-height-44,Y));
-				this.tta.style.right='308px';'468px';
+				/*this.tta.style.right='308px';//'468px';
 				this.tta.style.left='auto';
 				if (Game.onCrate) Y=Game.onCrate.getBounds().top-2;
-				this.tta.style.top=Math.max(0,Math.min(Game.windowH-this.tt.clientHeight-64,Y-48))+'px';
+				this.tta.style.top=Math.max(0,Math.min(Game.windowH-this.tt.clientHeight-64,Y-48))+'px';*/
 			}
 			else
 			{
@@ -4526,10 +4526,10 @@ Game.Launch=function()
 				Game.AscendDragging=0;
 			}
 			
-			Game.ascendl.style.backgroundPosition=Math.floor(Game.AscendOffX/2)+'px '+Math.floor(Game.AscendOffY/2)+'px';
-			Game.ascendl.style.backgroundPosition=Math.floor(Game.AscendOffX/2)+'px '+Math.floor(Game.AscendOffY/2)+'px,'+Math.floor(Game.AscendOffX/4)+'px '+Math.floor(Game.AscendOffY/4)+'px';
-			Game.ascendContentl.style.left=Math.floor(Game.AscendOffX)+'px';
-			Game.ascendContentl.style.top=Math.floor(Game.AscendOffY)+'px';
+			//Game.ascendl.style.backgroundPosition=Math.floor(Game.AscendOffX/2)+'px '+Math.floor(Game.AscendOffY/2)+'px';
+			//Game.ascendl.style.backgroundPosition=Math.floor(Game.AscendOffX/2)+'px '+Math.floor(Game.AscendOffY/2)+'px,'+Math.floor(Game.AscendOffX/4)+'px '+Math.floor(Game.AscendOffY/4)+'px';
+			//Game.ascendContentl.style.left=Math.floor(Game.AscendOffX)+'px';
+			//Game.ascendContentl.style.top=Math.floor(Game.AscendOffY)+'px';
 			Game.ascendContentl.style.webkitTransform='translate('+Math.floor(Game.AscendOffX)+'px,'+Math.floor(Game.AscendOffY)+'px)';
 			Game.ascendContentl.style.msTransform='translate('+Math.floor(Game.AscendOffX)+'px,'+Math.floor(Game.AscendOffY)+'px)';
 			Game.ascendContentl.style.oTransform='translate('+Math.floor(Game.AscendOffX)+'px,'+Math.floor(Game.AscendOffY)+'px)';
@@ -4543,7 +4543,7 @@ Game.Launch=function()
 			Game.ascendZoomablel.style.mozTransform='scale('+(Game.AscendZoom)+','+(Game.AscendZoom)+')';
 			Game.ascendZoomablel.style.transform='scale('+(Game.AscendZoom)+','+(Game.AscendZoom)+')';
 			
-			if (Game.Scroll!=0) Game.ascendContentl.style.transformOrigin=Math.floor(Game.windowW/2-Game.mouseX)+'px '+Math.floor(Game.windowH/2-Game.mouseY)+'px';
+			//if (Game.Scroll!=0) Game.ascendContentl.style.transformOrigin=Math.floor(Game.windowW/2-Game.mouseX)+'px '+Math.floor(Game.windowH/2-Game.mouseY)+'px';
 			if (Game.Scroll<0 && !Game.promptOn) {Game.AscendZoomT=0.5;}
 			if (Game.Scroll>0 && !Game.promptOn) {Game.AscendZoomT=1;}
 			
@@ -6108,13 +6108,13 @@ Game.Launch=function()
 					
 					me.x=-128;
 					me.y=Math.floor(Math.random()*Math.max(0,Game.bounds.bottom-Game.bounds.top-256)+Game.bounds.top+128)-128;
-					me.l.style.left=me.x+'px';
-					me.l.style.top=me.y+'px';
+					//me.l.style.left=me.x+'px';
+					//me.l.style.top=me.y+'px';
 					me.l.style.width='167px';
 					me.l.style.height='212px';
 					me.l.style.backgroundImage='url('+Game.resPath+'img/frostedReindeer.png)';
 					me.l.style.opacity='0';
-					me.l.style.transform='rotate('+(Math.random()*60-30)+'deg) scale('+(Math.random()*1+0.25)+')';
+					//me.l.style.transform='rotate('+(Math.random()*60-30)+'deg) scale('+(Math.random()*1+0.25)+')';
 					me.l.style.display='block';
 					me.l.setAttribute('alt',loc("Reindeer"));
 					
@@ -6979,7 +6979,7 @@ Game.Launch=function()
 			if (Game.onMenu!='')
 			{
 				str+='<div class="close menuClose" '+Game.clickStr+'="Game.ShowMenu();">x</div>';
-				str+='<div style="position:absolute;top:8px;right:8px;cursor:pointer;font-size:16px;" '+Game.clickStr+'="Game.ShowMenu();">X</div>';
+				//str+='<div style="position:absolute;top:8px;right:8px;cursor:pointer;font-size:16px;" '+Game.clickStr+'="Game.ShowMenu();">X</div>';
 			}
 			if (Game.onMenu=='prefs')
 			{
@@ -7194,7 +7194,7 @@ Game.Launch=function()
 						{
 							var level=Game.dragonLevels[mainLevels[i]];
 							dragonStr+='<div '+Game.getTooltip(
-							'<div style="width:96px;height:96px;margin:4px auto;background:url('+Game.resPath+'img/dragon.png?v='+Game.version+') '+(-level.pic*96)+'px 0px;"></div><div class="line"></div><div style="min-width:200px;text-align:center;margin-bottom:6px;">'+level.name+'</div>',
+							//'<div style="width:96px;height:96px;margin:4px auto;background:url('+Game.resPath+'img/dragon.png?v='+Game.version+') '+(-level.pic*96)+'px 0px;"></div><div class="line"></div><div style="min-width:200px;text-align:center;margin-bottom:6px;">'+level.name+'</div>'
 							'<div class="prompt" style="text-align:center;padding-bottom:6px;white-space:nowrap;margin:0px 32px;" id="tooltipDragon"><div style="width:96px;height:96px;margin:4px auto;background:url('+Game.resPath+'img/dragon.png?v='+Game.version+') '+(-level.pic*96)+'px 0px;filter:drop-shadow(0px 3px 2px #000);-webkit-filter:drop-shadow(0px 3px 2px #000);"></div><div class="line"></div><h3>'+level.name+'</h3></div>'
 							,'top')+' style="background:url('+Game.resPath+'img/dragon.png?v='+Game.version+') '+(-level.pic*48)+'px 0px;background-size:'+(frames*48)+'px 48px;" class="trophy"></div>';
 						}
@@ -7282,7 +7282,7 @@ Game.Launch=function()
 					(pledgeStr!=''?'<div class="listing"><b>'+loc("Pledge:")+'</b> '+loc("%1 remaining",pledgeStr)+'</div>':'')+
 					(Game.wrinklersPopped>0?'<div class="listing"><b>'+loc("Wrinklers popped:")+'</b> '+Beautify(Game.wrinklersPopped)+'</div>':'')+
 					((Game.canLumps() && Game.lumpsTotal>-1)?'<div class="listing"><b>'+loc("Sugar lumps harvested:")+'</b> <div class="price lump plain">'+Beautify(Game.lumpsTotal)+'</div></div>':'')+
-					(Game.cookiesSucked>0?'<div class="listing warning"><b>Withered :</b> '+Beautify(Game.cookiesSucked)+' cookies</div>':'')+
+					//(Game.cookiesSucked>0?'<div class="listing warning"><b>Withered :</b> '+Beautify(Game.cookiesSucked)+' cookies</div>':'')+
 					(Game.reindeerClicked>0?'<div class="listing"><b>'+loc("Reindeer found:")+'</b> '+Beautify(Game.reindeerClicked)+'</div>':'')+
 					(santaStr!=''?'<div class="listing"><b>'+loc("Santa stages unlocked:")+'</b></div><div>'+santaStr+'</div>':'')+
 					(dragonStr!=''?'<div class="listing"><b>'+loc("Dragon training:")+'</b></div><div>'+dragonStr+'</div>':'')+
@@ -7325,7 +7325,7 @@ Game.Launch=function()
 				'<div style="padding-bottom:128px;"></div>'
 				;
 			}
-			str='<div id="selectionKeeper" class="selectable">'+str+'</div>';
+			//str='<div id="selectionKeeper" class="selectable">'+str+'</div>';
 			l('menu').innerHTML=str;
 			if (App)
 			{
@@ -8181,15 +8181,15 @@ Game.Launch=function()
 					if (this.onMinigame)
 					{
 						l('row'+this.id).classList.add('onMinigame');
-						l('rowSpecial'+this.id).style.display='block';
-						l('rowCanvas'+this.id).style.display='none';
+						//l('rowSpecial'+this.id).style.display='block';
+						//l('rowCanvas'+this.id).style.display='none';
 						if (this.minigame.onResize) this.minigame.onResize();
 					}
 					else
 					{
 						l('row'+this.id).classList.remove('onMinigame');
-						l('rowSpecial'+this.id).style.display='none';
-						l('rowCanvas'+this.id).style.display='block';
+						//l('rowSpecial'+this.id).style.display='none';
+						//l('rowCanvas'+this.id).style.display='block';
 					}
 				}
 				this.refresh();
@@ -8568,17 +8568,17 @@ Game.Launch=function()
 						desc=Game.foolObjects[me.name].desc;
 					}
 					displayName=name;
-					if (name.length>16) displayName='<span style="font-size:75%;">'+name+'</span>';
+					//if (name.length>16) displayName='<span style="font-size:75%;">'+name+'</span>';
 				}
 				else if (!EN) displayName=name;
-				else if (!EN && name.length>16) displayName='<span style="font-size:75%;">'+name+'</span>';
+				//else if (!EN && name.length>16) displayName='<span style="font-size:75%;">'+name+'</span>';
 				icon=[icon[0]*64,icon[1]*64];
 				iconOff=[iconOff[0]*64,iconOff[1]*64];
 				
 				//me.l.className=classes;
-				l('productIcon'+me.id).style.backgroundImage='url('+Game.resPath+'img/'+icon+')';
+				//l('productIcon'+me.id).style.backgroundImage='url('+Game.resPath+'img/'+icon+')';
 				l('productIcon'+me.id).style.backgroundPosition='-'+icon[0]+'px -'+icon[1]+'px';
-				l('productIconOff'+me.id).style.backgroundImage='url('+Game.resPath+'img/'+iconOff+')';
+				//l('productIconOff'+me.id).style.backgroundImage='url('+Game.resPath+'img/'+iconOff+')';
 				l('productIconOff'+me.id).style.backgroundPosition='-'+iconOff[0]+'px -'+iconOff[1]+'px';
 				l('productName'+me.id).innerHTML=displayName;
 				if (name.length>12/Langs[locId].w && (Game.season=='fools' || !EN)) l('productName'+me.id).classList.add('longProductName'); else l('productName'+me.id).classList.remove('longProductName');
@@ -8974,7 +8974,7 @@ Game.Launch=function()
 			{
 				var me=Game.Objects[i];
 				str+=(Game.prefs.screenreader?'<button aria-labelledby="ariaReader-product-'+(me.id)+'"':'<div')+' class="product toggledOff" '+Game.getDynamicTooltip('Game.ObjectsById['+me.id+'].tooltip','store')+' id="product'+me.id+'"><div class="icon off" id="productIconOff'+me.id+'" style=""></div><div class="icon" id="productIcon'+me.id+'" style=""></div><div class="content"><div class="lockedTitle">???</div><div class="title productName" id="productName'+me.id+'"></div><span class="priceMult" id="productPriceMult'+me.id+'"></span><span class="price" id="productPrice'+me.id+'"></span><div class="title owned" id="productOwned'+me.id+'"></div>'+(Game.prefs.screenreader?'<label class="srOnly" style="width:64px;left:-64px;" id="ariaReader-product-'+(me.id)+'"></label>':'')+'</div>'+
-				'<div class="buySell"><div style="left:0px;" id="buttonBuy10-'+me.id+'">Buy 10</div><div style="left:100px;" id="buttonSell-'+me.id+'">Sell 1</div><div style="left:200px;" id="buttonSellAll-'+me.id+'">Sell all</div></div>'+
+				/*'<div class="buySell"><div style="left:0px;" id="buttonBuy10-'+me.id+'">Buy 10</div><div style="left:100px;" id="buttonSell-'+me.id+'">Sell 1</div><div style="left:200px;" id="buttonSellAll-'+me.id+'">Sell all</div></div>'+*/
 				(Game.prefs.screenreader?'</button>':'</div>');
 			}
 			l('products').innerHTML=str;
@@ -9753,7 +9753,7 @@ Game.Launch=function()
 				me.pics=[];
 				var icon=[0*64,me.icon*64];
 				muteStr+='<div class="tinyProductIcon" id="mutedProduct'+me.id+'" style="display:none;background-position:-'+icon[0]+'px -'+icon[1]+'px;" '+Game.clickStr+'="Game.ObjectsById['+me.id+'].mute(0);PlaySound(Game.ObjectsById['+me.id+'].muted?\'snd/clickOff2.mp3\':\'snd/clickOn2.mp3\');" '+Game.getDynamicTooltip('Game.mutedBuildingTooltip('+me.id+')','this')+'></div>';
-				muteStr+='<div class="tinyProductIcon" id="mutedProduct'+me.id+'" style="display:none;background-position:-'+icon[0]+'px -'+icon[1]+'px;" '+Game.clickStr+'="Game.ObjectsById['+me.id+'].mute(0);PlaySound(Game.ObjectsById['+me.id+'].muted?\'snd/clickOff2.mp3\':\'snd/clickOn2.mp3\');" '+Game.getTooltip('<div style="width:150px;text-align:center;font-size:11px;"><b>Unmute '+me.plural+'</b><br>(Display this building)</div>')+'></div>';
+				//muteStr+='<div class="tinyProductIcon" id="mutedProduct'+me.id+'" style="display:none;background-position:-'+icon[0]+'px -'+icon[1]+'px;" '+Game.clickStr+'="Game.ObjectsById['+me.id+'].mute(0);PlaySound(Game.ObjectsById['+me.id+'].muted?\'snd/clickOff2.mp3\':\'snd/clickOn2.mp3\');" '+Game.getTooltip('<div style="width:150px;text-align:center;font-size:11px;"><b>Unmute '+me.plural+'</b><br>(Display this building)</div>')+'></div>';
 				
 				AddEvent(me.canvas,'mouseover',function(me){return function(){me.mouseOn=true;}}(me));
 				AddEvent(me.canvas,'mouseout',function(me){return function(){me.mouseOn=false;}}(me));
@@ -10062,14 +10062,14 @@ Game.Launch=function()
 			if (pool=='' || pool=='cookie' || pool=='tech') return true; else return false;
 		}
 		
-		AddEvent(l('toggleBox'),'blur',function()//if we click outside of the selector, close it
+		/*AddEvent(l('toggleBox'),'blur',function()//if we click outside of the selector, close it
 			{
 				//this has a couple problems, such as when clicking on the upgrade - this toggles it off and back on instantly
 				l('toggleBox').style.display='none';
 				l('toggleBox').innerHTML='';
 				Game.choiceSelectorOn=-1;
 			}
-		);
+		);*/
 		
 		Game.RequiresConfirmation=function(upgrade,prompt)
 		{
@@ -10087,7 +10087,7 @@ Game.Launch=function()
 						Game.Upgrades[what].unlocked=1;
 						Game.upgradesToRebuild=1;
 						Game.recalculateGains=1;
-						Game.Notify('Upgrade unlocked','<div class="title" style="font-size:18px;margin-top:-2px;">'+Game.Upgrades[what].dname+'</div>',Game.Upgrades[what].icon,6);
+						/*Game.Notify('Upgrade unlocked','<div class="title" style="font-size:18px;margin-top:-2px;">'+Game.Upgrades[what].dname+'</div>',Game.Upgrades[what].icon,6);*/
 					}
 				}
 			}
@@ -10172,9 +10172,9 @@ Game.Launch=function()
 				var me=Game.UpgradesInStore[i];
 				var str=Game.crate(me,'store','Game.UpgradesById['+me.id+'].click(event);','upgrade'+i);
 				
-				var str='<div class="crate upgrade" '+Game.getTooltip(
+				/*var str='<div class="crate upgrade" '+Game.getTooltip(
 				'<div style="min-width:200px;"><div style="float:right;"><span class="price">'+Beautify(Math.round(me.getPrice()))+'</span></div><small>'+(me.pool=='toggle'?'[Togglable]':'[Upgrade]')+'</small><div class="name">'+me.dname+'</div><div class="line"></div><div class="description">'+me.desc+'</div></div>'
-				,'store')+' '+Game.clickStr+'="Game.UpgradesById['+me.id+'].buy();" id="upgrade'+i+'" style="'+writeIcon(me.icon)+'"></div>';
+				,'store')+' '+Game.clickStr+'="Game.UpgradesById['+me.id+'].buy();" id="upgrade'+i+'" style="'+writeIcon(me.icon)+'"></div>';*/
 				if (me.pool=='toggle') toggleStr+=str; else if (me.pool=='tech') techStr+=str; else
 				{
 					if (me.isVaulted() && Game.Has('Inspired checklist')) vaultStr+=str; else storeStr+=str;
@@ -10652,10 +10652,10 @@ Game.Launch=function()
 			for (var i in Game.halloweenDrops) {if (Game.Has(Game.halloweenDrops[i])) num++;}
 			return num;
 		}
-		for (var i in Game.halloweenDrops)
+		/*for (var i in Game.halloweenDrops)
 		{
 			Game.Upgrades[Game.halloweenDrops[i]].descFunc=function(){return '<div style="text-align:center;">You currently own <b>'+Game.GetHowManyHalloweenDrops()+'/'+Game.halloweenDrops.length+'</b> halloween cookies.</div><div class="line"></div>'+this.ddesc;};
-		}
+		}*/
 		
 		order=0;
 		new Game.Upgrade('Persistent memory',loc("Subsequent research will be <b>%1 times</b> as fast.",10)+'<q>It\'s all making sense!<br>Again!</q>',500,[9,2]);Game.last.pool='prestige';
@@ -12507,13 +12507,13 @@ Game.Launch=function()
 							'<textarea id="giftMessage" maxlength="100" spellcheck="false" style="color:#000;width:100%;height:64px;font-size:11px;font-weight:bold;padding:8px 16px;box-sizing:border-box;margin:0px 3px;text-align:center;background:url('+Game.resPath+'img/messageBG.png);background-position:center -50px;box-shadow:0px 0px 16px rgba(98,92,72,1) inset;text-shadow:0px 0px 2px rgba(98,92,72,1);overflow:hidden;"></textarea>'+
 						'<div class="line"></div>'+
 						'<div class="optionBox" style="margin:-4px 0px;clear:both;overflow:hidden;">'+
-							'<div style="'//float:left;width:49%+'">'+
+							'<div style="'/*float:left;width:49%;*/+'">'+
 								'<a class="option" id="giftBoxDesignButton">'+
 									'<div id="giftBoxDesign" class="crate noFrame upgrade enabled" style="background-position:'+(-0*48)+'px '+(-7*48)+'px;display:inline-block;float:none;z-index:99;margin:-4px;pointer-events:none;"></div>'+
 									'<div style="font-weight:bold;font-size:11px;position:relative;top:-4px;z-index:100;font-variant:small-caps;pointer-events:none;">'+loc("Box design")+'</div>'+
 								'</a>'+
 							'</div>'+
-							'<div style="display:none;'//float:right;width:49%+'">'+
+							'<div style="display:none;'/*float:right;width:49%;*/+'">'+
 								'<div id="giftBoxIcon" class="crate noFrame upgrade enabled" style="background-position:'+(-0*48)+'px '+(-7*48)+'px;display:none;float:none;z-index:99;"></div>'+
 								'<div id="giftBoxIconNone" class="mouseOverScale" style="font-size:11px;z-index:10;min-width:48px;padding:20px 0px 21px 0px;text-align:center;display:inline-block;font-weight:bold;z-index:99;">('+loc("none")+')</div>'+
 								'<div style="font-weight:bold;font-size:11px;position:relative;top:-12px;z-index:100;font-variant:small-caps;">'+loc("Icon")+'</div>'+
@@ -12939,10 +12939,10 @@ Game.Launch=function()
 			for (var i in Game.reindeerDrops) {if (Game.Has(Game.reindeerDrops[i])) num++;}
 			return num;
 		}
-		for (var i in Game.santaDrops)
+		/*for (var i in Game.santaDrops)
 		{
 			Game.Upgrades[Game.santaDrops[i]].descFunc=function(){return '<div style="text-align:center;">You currently own <b>'+Game.GetHowManySantaDrops()+'/'+Game.santaDrops.length+'</b> of Santa\'s gifts.</div><div class="line"></div>'+this.ddesc;};
-		}
+		}*/
 		
 		Game.seasonDrops=Game.heartDrops.concat(Game.halloweenDrops).concat(Game.easterEggs).concat(Game.santaDrops).concat(Game.reindeerDrops);
 		Game.keepsakes=[];
@@ -15610,7 +15610,7 @@ Game.Launch=function()
 				{
 					Game.specialTab='';
 					l('specialPopup').className='framed prompt offScreen';
-					setTimeout(function(){if (Game.specialTab=='') {l('specialPopup').style.display='none';l('specialPopup').innerHTML='';}},1000*0.2);
+					setTimeout(function(){if (Game.specialTab=='') {/*l('specialPopup').style.display='none';*/l('specialPopup').innerHTML='';}},1000*0.2);
 				}
 			}
 		}
@@ -15883,8 +15883,8 @@ Game.Launch=function()
 				{
 					if (false && Game.bgType!=0 && Game.ascensionMode!=1)
 					{
-						l('backgroundCanvas').style.background='url('+Game.resPath+'img/shadedBordersSoft.png) 0px 0px,url('+Game.resPath+'img/bgWheat.jpg) 50% 50%';
-						l('backgroundCanvas').style.backgroundSize='100% 100%,cover';
+						//l('backgroundCanvas').style.background='url('+Game.resPath+'img/shadedBordersSoft.png) 0px 0px,url('+Game.resPath+'img/bgWheat.jpg) 50% 50%';
+						//l('backgroundCanvas').style.backgroundSize='100% 100%,cover';
 					}
 					else
 					{
@@ -17214,7 +17214,7 @@ Game.Launch=function()
 			//if (Game.ascendMeterPercentT<Game.ascendMeterPercent) {Game.ascendMeterPercent=0;PlaySound('snd/levelPrestige.mp3',0.5);}
 			//if (percent>=1) {Game.ascendMeter.className='';} else Game.ascendMeter.className='filling';
 		}
-		Game.ascendMeter.style.right=Math.floor(Math.max(0,1-Game.ascendMeterPercent)*100)+'px';
+		//Game.ascendMeter.style.right=Math.floor(Math.max(0,1-Game.ascendMeterPercent)*100)+'px';
 		Game.ascendMeter.style.backgroundPosition=(-Game.realT*0.5-Game.ascendMeterPercent*100)+'px';
 		Game.ascendMeter.style.transform='translate('+Math.floor(-Math.max(0,1-Game.ascendMeterPercent)*100)+'%,0px)';
 		Game.ascendMeterPercent+=(Game.ascendMeterPercentT-Game.ascendMeterPercent)*0.1;

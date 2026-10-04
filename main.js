@@ -13217,6 +13217,7 @@ Game.Launch=function()
 			Game.BankAchievements.push(achiev);
 			return achiev;
 		}
+
 		Game.CpsAchievements=[];
 		Game.CpsAchievement=function(name,q)
 		{
@@ -14273,6 +14274,25 @@ Game.Launch=function()
 
 		order=21100;
 		new Game.Achievement('Precious and sparkling sugar',loc("Harvest a <b>diamond sugar lump</b>.")+'<q>It sold for $12,500 at auction!</q>',[29,19]);Game.last.pool='shadow';
+
+		order=1025;
+		new Game.Achievement('Clicking',loc("Click on the Big cookie <b>1 time</b>."),[1,6]);
+		new Game.Achievement('Double clicking',loc("Click on the Big cookie <b>2 times</b>."),[12,1]);
+		new Game.Achievement('Clicking more',loc("Click on the Big cookie <b>5 times</b>."),[12,2]);
+		new Game.Achievement('Clicking even more',loc("Click on the Big cookie <b>10 times</b>."),[12,13]);
+		new Game.Achievement('Megaclicker',loc("Click on the Big cookie <b>25 times</b>."),[12,14]);
+		new Game.Achievement('Gigaclicker',loc("Click on the Big cookie <b>50 times</b>."),[12,15]);
+		new Game.Achievement('Superclicker',loc("Click on the Big cookie <b>100 times</b>."),[12,16]);
+		new Game.Achievement('Hyperclicker',loc("Click on the Big cookie <b>500 times</b>."),[12,17]);
+		new Game.Achievement('Extraclicker',loc("Click on the Big cookie <b>1,000 times</b>."),[12,18]);
+		new Game.Achievement('Teraclicker',loc("Click on the Big cookie <b>5,000 times</b>."),[12,19]);
+		new Game.Achievement('Petaclicker',loc("Click on the Big cookie <b>10,000 times</b>."),[12,28]);
+		new Game.Achievement('Exaclicker',loc("Click on the Big cookie <b>50,000 times</b>."),[12,30]);
+		new Game.Achievement('Zettaclicker',loc("Click on the Big cookie <b>100,000 times</b>."),[12,31]);
+		new Game.Achievement('Yottaclicker',loc("Click on the Big cookie <b>500,000 times</b>."),[12,34]);
+		new Game.Achievement('Ronnaclicker',loc("Click on the Big cookie <b>1 million times</b>."),[12,36]);
+
+
 		//end of achievements
 		
 		
@@ -16935,6 +16955,22 @@ Game.Launch=function()
 			if (Game.T%(Game.fps*5)==0 && Game.ObjectsById.length>0)//check some achievements and upgrades
 			{
 				if (isNaN(Game.cookies)) {Game.cookies=0;Game.cookiesEarned=0;Game.recalculateGains=1;}
+
+				if (Game.cookieClicks>=1) Game.Win('Clicking');
+				if (Game.cookieClicks>=2) Game.Win('Double clicking');
+				if (Game.cookieClicks>=5) Game.Win('Clicking more');
+				if (Game.cookieClicks>=10) Game.Win('Clicking even more');
+				if (Game.cookieClicks>=25) Game.Win('Megaclicker');
+				if (Game.cookieClicks>=50) Game.Win('Gigaclicker');
+				if (Game.cookieClicks>=100) Game.Win('Superclicker');
+				if (Game.cookieClicks>=500) Game.Win('Hyperclicker');
+				if (Game.cookieClicks>=1000) Game.Win('Extraclicker');
+				if (Game.cookieClicks>=5000) Game.Win('Teraclicker');
+				if (Game.cookieClicks>=10000) Game.Win('Petaclicker');
+				if (Game.cookieClicks>=50000) Game.Win('Exaclicker');
+				if (Game.cookieClicks>=100000) Game.Win('Zettaclicker');
+				if (Game.cookieClicks>=500000) Game.Win('Yottaclicker');
+				if (Game.cookieClicks>=1000000) Game.Win('Ronnaclicker');
 				
 				var timePlayed=new Date();
 				timePlayed.setTime(Date.now()-Game.startDate);

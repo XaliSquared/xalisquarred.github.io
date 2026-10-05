@@ -1481,6 +1481,7 @@ AddLanguage('RU','russian',{
 	"Purchase <b>%1</b>.": "Купить <b>%1</b>.",
 	"Dunk the cookie.": "Обмакнуть печенье.",
 	"Trigger the grandmapocalypse for the first time.": "Впервые спровоцируйте бабулепокалипсис.",
+	"Get to <b>50 quintillion cookies</b> baked without triggering the Grandmapocalypse.": "Испечь <b>печенья: 50 quintillion</b> <b>не провоцируя Бабулепокалипсис</b>.",
 	"Appease the grandmatriarchs at least <b>once</b>.": "Успокоить бабульматриархов хотя бы <b>один раз</b>.",
 	"Appease the grandmatriarchs at least <b>%1 times</b>.": "Успокоить бабульматриархов хотя бы <b>%1 раз</b>.",
 	"Declare a covenant with the grandmatriarchs.": "Заключить договор с бабульматриархами.",
@@ -3572,6 +3573,7 @@ AddLanguage('RU','russian',{
 	"[Achievement name 659]Zettaclicker": "Зеттакликер",
 	"[Achievement name 660]Yottaclicker": "Йоттакликер",
 	"[Achievement name 661]Ronnaclicker": "Роннакликер",
+	"[Achievement name 662]No grandmapocalypse": "Бабулепокалипсиса нет",
 	"[Achievement quote 645]Buddy, play the game normally, dont use any cheats!": "Дружище, играй в игру по честному, не используй никакие читы!",
 	"[Achievement quote 646]It sold for $12,500 at auction!": "Его продали на аукционе за 12,500 долларов!"
 });

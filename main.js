@@ -14295,6 +14295,9 @@ Game.Launch=function()
 		order=31500;
 		new Game.Achievement('No grandmapocalypse',loc("Get to <b>50 quintillion cookies</b> baked without triggering the Grandmapocalypse."),[9,9]);Game.last.pool='shadow';
 
+		order=10000;
+		new Game.Achievement('Almost at the goal',loc("Bake <b>%1</b> in one ascension.",loc("1 googol cookies")),[23,0]);Game.last.pool='shadow';
+
 
 		//end of achievements
 		
@@ -16955,6 +16958,7 @@ Game.Launch=function()
 			UNLOCKING STUFF
 			=======================================================================================*/
 			if (Game.T%(Game.fps)==0 && Math.random()<1/1000000) Game.Win('Just plain lucky');//1 chance in 1,000,000 every second achievement
+			if (Game.cookiesEarned>=1e100) Game.Win("Almost at the goal");
 			if (Game.T%(Game.fps*5)==0 && Game.ObjectsById.length>0)//check some achievements and upgrades
 			{
 				if (isNaN(Game.cookies)) {Game.cookies=0;Game.cookiesEarned=0;Game.recalculateGains=1;}

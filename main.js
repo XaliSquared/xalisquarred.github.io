@@ -14291,6 +14291,9 @@ Game.Launch=function()
 		new Game.Achievement('Zettaclicker',loc("Click on the Big cookie <b>100,000 times</b>."),[12,31]);
 		new Game.Achievement('Yottaclicker',loc("Click on the Big cookie <b>500,000 times</b>."),[12,34]);
 		new Game.Achievement('Ronnaclicker',loc("Click on the Big cookie <b>1 million times</b>."),[12,36]);
+		
+		order=31500;
+		new Game.Achievement('No grandmapocalypse',loc("Get to <b>50 quintillion cookies</b> baked without triggering the Grandmapocalypse."),[9,9]);Game.last.pool='shadow';
 
 
 		//end of achievements
@@ -16988,6 +16991,7 @@ Game.Launch=function()
 					if (Game.cookiesEarned>=1000000000 && Game.UpgradesOwned==0) Game.Win('Hardcore');
 					if (Game.cookiesEarned>=1000000000000 && Game.UpgradesOwned==0) Game.Win('Hardcorer');
 					if (Game.cookiesEarned>=1000000000000000 && Game.UpgradesOwned==0) Game.Win('Hardcorest');
+					if (Game.cookiesEarned>=50000000000000000000 && Game.UpgradesById[69].bought==0) Game.Win('No grandmapocalypse');
 				}
 				
 				for (var i in Game.UnlockAt)

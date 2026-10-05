@@ -1217,6 +1217,7 @@ AddLanguage('RU','russian',{
 	"Click on the Big cookie <b>100,000 times</b>.": "Кликнуть на Большое печенье <b>100,000 раз</b>.",
 	"Click on the Big cookie <b>500,000 times</b>.": "Кликнуть на Большое печенье <b>500,000 раз</b>.",
 	"Click on the Big cookie <b>1 million times</b>.": "Кликнуть на Большое печенье <b>1 million раз</b>.",
+	"1 googol cookies": "печенья: 1 googol",
 	"%1 gain <b>+%2%</b> CpS per %3.": "%1 дает <b>+%2%</b> печ/с за %3.",
 	"Multiplies the gain from %1 by <b>%2</b>.": "Умножает выигрыш от %1 на <b>%2</b>.",
 	"Grandma-operated science lab and leisure club.<br>Grandmas are <b>4 times</b> as efficient.<br><b>Regularly unlocks new upgrades</b>.": "Бабулина научная лаборатория и клуб досуга.<br>Бабули в <b>4 раза</b> эффективнее.<br><b>Регулярно открывает новые улучшения</b>.",
@@ -3574,6 +3575,7 @@ AddLanguage('RU','russian',{
 	"[Achievement name 660]Yottaclicker": "Йоттакликер",
 	"[Achievement name 661]Ronnaclicker": "Роннакликер",
 	"[Achievement name 662]No grandmapocalypse": "Бабулепокалипсиса нет",
+	"[Achievement name 663]Almost at the goal": "Почти у цели",
 	"[Achievement quote 645]Buddy, play the game normally, dont use any cheats!": "Дружище, играй в игру по честному, не используй никакие читы!",
 	"[Achievement quote 646]It sold for $12,500 at auction!": "Его продали на аукционе за 12,500 долларов!"
 });

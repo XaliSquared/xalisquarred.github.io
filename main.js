@@ -14297,6 +14297,7 @@ Game.Launch=function()
 
 		order=10000;
 		new Game.Achievement('Almost at the goal',loc("Bake <b>%1</b> in one ascension.",loc("1 googol cookies")),[23,0]);Game.last.pool='shadow';
+		new Game.Achievement('Two sides of the cookie',loc("Have <b>Frenzy</b> and <b>Clot</b> at the same time."),[0,4])
 
 
 		//end of achievements
@@ -16962,6 +16963,8 @@ Game.Launch=function()
 			if (Game.T%(Game.fps*5)==0 && Game.ObjectsById.length>0)//check some achievements and upgrades
 			{
 				if (isNaN(Game.cookies)) {Game.cookies=0;Game.cookiesEarned=0;Game.recalculateGains=1;}
+
+				if (Game.hasBuff('Frenzy') && Game.hasBuff('Clot')) Game.Win('Two sides of the cookie')
 
 				if (Game.cookieClicks>=1) Game.Win('Clicking');
 				if (Game.cookieClicks>=2) Game.Win('Double clicking');

@@ -1498,6 +1498,7 @@ AddLanguage('RU','russian',{
 	"Pop <b>1 reindeer</b>.": "Лопнуть <b>1 оленя</b>.",
 	"Pop <b>%1 reindeer</b>.": "Лопнуть <b>%1 оленей</b>.",
 	"Pop a reindeer <b>during an elder frenzy</b>.": "Лопнуть оленя <b>во время безумия старушек</b>.",
+	"Have <b>Frenzy</b> and <b>Clot</b> at the same time.": "Иметь <b>Безумие</b> и <b>Сгусток</b> одновременно.",
 	"Unlock <b>every Valentine-themed cookie</b>.": "Разблокировать <b>все печеньки, посвященные дню Святого Валентина</b>.",
 	"Click the tiny cookie.": "Кликнуть крошечное печенье.",
 	"This is for baking %1 and making it on the local news.": "Это нужно для того, чтобы испечь %1 и попасть в местные новости.",
@@ -3576,6 +3577,7 @@ AddLanguage('RU','russian',{
 	"[Achievement name 661]Ronnaclicker": "Роннакликер",
 	"[Achievement name 662]No grandmapocalypse": "Бабулепокалипсиса нет",
 	"[Achievement name 663]Almost at the goal": "Почти у цели",
+	"[Achievement name 664]Two sides of the cookie": "Две стороны печенья",
 	"[Achievement quote 645]Buddy, play the game normally, dont use any cheats!": "Дружище, играй в игру по честному, не используй никакие читы!",
 	"[Achievement quote 646]It sold for $12,500 at auction!": "Его продали на аукционе за 12,500 долларов!"
 });
